@@ -19,8 +19,9 @@ async def inventory_item_detection(image_file: UploadFile):
     generated_image_name = str(uuid.uuid4())
     file_type = image_file.filename.split(".")[-1]
     image_name = f"{generated_image_name}.{file_type}"
-    requested_image_path = f"images/requested/{image_name}"
-    guessed_images_dir = f"images/guessed"
+    base_image_path = "images/"
+    requested_image_path = f"{base_image_path}requested/{image_name}"
+    guessed_images_dir = f"{base_image_path}guessed"
     with open(requested_image_path, "wb") as buffer:
         shutil.copyfileobj(image_file.file, buffer)
         buffer.close()

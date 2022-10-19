@@ -1,4 +1,4 @@
 venv/
 
-images/guessed/
-images/requested/
+/images/guessed/
+/images/requested/
