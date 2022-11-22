@@ -26,6 +26,6 @@ async def inventory_item_detection(image_file: UploadFile):
         shutil.copyfileobj(image_file.file, buffer)
         buffer.close()
     result = model_instance.predict(requested_image_path)
-    save_results_to(result, guessed_images_dir, image_name)
+    save_results_to(result, guessed_images_dir)
     guessed_image_path = f"{guessed_images_dir}/{image_name}"
     return FileResponse(guessed_image_path)
