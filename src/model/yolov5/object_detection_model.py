@@ -1,9 +1,9 @@
 import yolov5
 
 
-def save_results_to(results, dir_path: str):
+def save_results_to(results, dir_path: str, file_name: str):
     try:
-        results.save(save_dir=dir_path)
+        results.save(save_dir=dir_path, filename=file_name)
         return True
     except Exception as e:
         return False

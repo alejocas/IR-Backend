@@ -5,7 +5,11 @@ from src.api.v1.routes.api import router as api_router
 
 app = FastAPI()
 
-origins = ["http://localhost:8005"]
+origins = [
+    "http://localhost:8005",
+    "http://localhost:3000",
+    "*"
+]
 
 app.add_middleware(
     CORSMiddleware,
